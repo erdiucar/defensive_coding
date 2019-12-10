@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DefensiveCoding.BusinessLogic
 {
-    public class Payment
+    public class OrderRepository
     {
-        public void ProcessPayment(Payment payment)
+        public void Add(Order order)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

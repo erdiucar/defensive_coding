@@ -8,5 +8,10 @@ namespace DefensiveCoding.BusinessLogic
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public void ValidateEmail()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

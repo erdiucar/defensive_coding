@@ -6,5 +6,9 @@ namespace DefensiveCoding.BusinessLogic
 {
     public class InventoryRepository
     {
+        public void OrderItems(Order order, bool allowSplitOrders)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
