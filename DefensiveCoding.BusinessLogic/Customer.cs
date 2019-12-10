@@ -14,11 +14,11 @@ namespace DefensiveCoding.BusinessLogic
             decimal goalStepCount = 0;
             decimal actualStepCount = 0;
 
-            if (string.IsNullOrWhiteSpace(goalSteps)) throw new ArgumentException(message: "Goal must be entered", paramName: nameof(goalSteps));
-            if (string.IsNullOrWhiteSpace(actualSteps)) throw new ArgumentException(message: "Actual steps count must be entered", paramName: nameof(actualSteps));
+            if (string.IsNullOrWhiteSpace(goalSteps)) throw new ArgumentException(message: "Goal must be entered");
+            if (string.IsNullOrWhiteSpace(actualSteps)) throw new ArgumentException(message: "Actual steps count must be entered");
 
-            if (!decimal.TryParse(goalSteps, out goalStepCount)) throw new ArgumentException(message: "Goal must be numeric", paramName: nameof(goalSteps));
-            if (!decimal.TryParse(actualSteps, out actualStepCount)) throw new ArgumentException(message: "Actual steps must be numeric", paramName: nameof(actualSteps));
+            if (!decimal.TryParse(goalSteps, out goalStepCount)) throw new ArgumentException(message: "Goal must be numeric");
+            if (!decimal.TryParse(actualSteps, out actualStepCount)) throw new ArgumentException(message: "Actual steps must be numeric");
 
             return CalculatePercentOfGoalSteps(goalStepCount, actualStepCount);
         }
