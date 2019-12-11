@@ -18,6 +18,13 @@ namespace DefensiveCoding.Windows
 
         private void OrderButton_Click(object sender, EventArgs e)
         {
+            Button button = sender as Button;
+
+            if (button != null)
+            {
+                button.Text = "Processing ...";
+            }
+
             PlaceOrder();
         }
 

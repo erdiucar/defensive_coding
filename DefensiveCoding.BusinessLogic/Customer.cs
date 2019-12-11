@@ -11,13 +11,13 @@ namespace DefensiveCoding.BusinessLogic
 
         public decimal CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
         {
-            decimal goalStepCount = 0;
-            decimal actualStepCount = 0;
-
             if (string.IsNullOrWhiteSpace(goalSteps)) throw new ArgumentException(message: "Goal must be entered");
             if (string.IsNullOrWhiteSpace(actualSteps)) throw new ArgumentException(message: "Actual steps count must be entered");
 
+            decimal goalStepCount = 0;
             if (!decimal.TryParse(goalSteps, out goalStepCount)) throw new ArgumentException(message: "Goal must be numeric");
+            
+            decimal actualStepCount = 0;
             if (!decimal.TryParse(actualSteps, out actualStepCount)) throw new ArgumentException(message: "Actual steps must be numeric");
 
             return CalculatePercentOfGoalSteps(goalStepCount, actualStepCount);
@@ -31,7 +31,13 @@ namespace DefensiveCoding.BusinessLogic
 
         public void ValidateEmail()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(this.EmailAddress)) throw new ArgumentException("Email address is null");
+
+            var isValidFormat = true;
+            if (!isValidFormat) throw new ArgumentException("Email address is not in a correct format");
+
+            var isRealDomain = true;
+            if (!isRealDomain) throw new ArgumentException("Email address does not include a valid domain");
         }
     }
 }

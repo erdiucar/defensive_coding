@@ -35,7 +35,7 @@
             // 
             this.OrderButton.Location = new System.Drawing.Point(136, 110);
             this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(75, 23);
+            this.OrderButton.Size = new System.Drawing.Size(100, 52);
             this.OrderButton.TabIndex = 0;
             this.OrderButton.Text = "Order";
             this.OrderButton.UseVisualStyleBackColor = true;
