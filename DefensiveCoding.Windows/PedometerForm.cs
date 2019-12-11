@@ -21,9 +21,16 @@ namespace DefensiveCoding.Windows
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             var customer = new Customer();
-            var result = customer.CalculatePercentOfGoalSteps(this.GoalTextBox.Text, this.StepsTextBox.Text);
 
-            PercentResultLabel.Text = "You reached " + decimal.Round(result, 2, MidpointRounding.AwayFromZero) + "% of your goal.";
+            try
+            {
+                var result = customer.CalculatePercentOfGoalSteps(this.GoalTextBox.Text, this.StepsTextBox.Text);
+                PercentResultLabel.Text = "You reached " + decimal.Round(result, 2, MidpointRounding.AwayFromZero) + "% of your goal.";
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

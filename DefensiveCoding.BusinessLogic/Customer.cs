@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Common;
+using System;
 
 namespace DefensiveCoding.BusinessLogic
 {
@@ -29,15 +30,39 @@ namespace DefensiveCoding.BusinessLogic
             return (actualStepCount / goalStepCount) * 100;
         }
 
-        public void ValidateEmail()
+        public OperationResult ValidateEmail()
         {
-            if (string.IsNullOrWhiteSpace(this.EmailAddress)) throw new ArgumentException("Email address is null");
+            var operationResult = new OperationResult();
 
-            var isValidFormat = true;
-            if (!isValidFormat) throw new ArgumentException("Email address is not in a correct format");
+            if (string.IsNullOrWhiteSpace(this.EmailAddress))
+            {
+                operationResult.Success = false;
+                operationResult.AddMessage("Email address is null");
+            }
 
-            var isRealDomain = true;
-            if (!isRealDomain) throw new ArgumentException("Email address does not include a valid domain");
+            if (operationResult.Success)
+            {
+                var isValidFormat = true;
+                // Code here that validates the format of the email
+                // using Regular Expressions.
+                if (!isValidFormat)
+                {
+                    operationResult.Success = false;
+                    operationResult.AddMessage("Email address is not in a correct format");
+                }
+            }
+
+            if (operationResult.Success)
+            {
+                var isRealDomain = true;
+                // Code here that confirms whether domain exists.
+                if (!isRealDomain)
+                {
+                    operationResult.Success = false;
+                    operationResult.AddMessage("Email address does not include a valid domain");
+                }
+            }
+            return operationResult;
         }
     }
 }

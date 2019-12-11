@@ -13,7 +13,6 @@ namespace DefensiveCoding.BusinessLogic
 
         public void Update()
         {
-            throw new NotImplementedException();
         }
     }
 }

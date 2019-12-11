@@ -8,7 +8,6 @@ namespace DefensiveCoding.BusinessLogic
     {
         public void OrderItems(Order order, bool allowSplitOrders)
         {
-            throw new NotImplementedException();
         }
     }
 }

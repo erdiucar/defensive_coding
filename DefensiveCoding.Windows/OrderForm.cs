@@ -35,7 +35,16 @@ namespace DefensiveCoding.Windows
             var payment = new Payment();
 
             var orderController = new OrderController();
-            orderController.PlaceOrder(customer, order, payment, allowSplitOrders: true, emailReceipt: true);
+
+            try
+            {
+                orderController.PlaceOrder(customer, order, payment, allowSplitOrders: true, emailReceipt: true);
+            }
+            catch (ArgumentNullException ex)
+            {
+               // log the issue
+               // display a message to the user that the order was not successful
+            }
         }
     }
 }
